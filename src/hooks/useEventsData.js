@@ -11,9 +11,10 @@ const useEventsData = () => {
 
        const fetchEvents = async (params) =>{
         try {
-            const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=JKKSubod9qAA1BGJXZVGJqU0wZtdRdpt&countryCode=US${params?.lenght ? params : ''}`);
-            const data = await response.json();
-            console.log(data);
+            const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=JKKSubod9qAA1BGJXZVGJqU0wZtdRdpt&countryCode=MX${params?.length ? params : ''}`);
+
+            
+            const data = await response.json();            
             
             setData(data)
             setLoading(false)
@@ -22,10 +23,12 @@ const useEventsData = () => {
         }
        }  
   
+console.log(data);
 
     return {
         events: data?._embedded ?.events || [],
         isLoading,
+        page: data?.page || {}, 
         error,
         fetchEvents,
     }

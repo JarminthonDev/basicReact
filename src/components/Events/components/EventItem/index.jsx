@@ -1,3 +1,6 @@
+import styles from "./Eventitem.module.css"
+
+
 const EventItem = ({id,info,name,image, onEventClick})=>{
     
     
@@ -8,11 +11,11 @@ const EventItem = ({id,info,name,image, onEventClick})=>{
     return(
         
 
-        <div>
-            <img src={image} alt={name} />
-            <h4>{name}</h4>
-            <p>{info}</p>
-            <button value={'Boton'}  onClick={handleSeeMoreClick}  >Boton</button>
+        <div className={styles.eventInfoContainer} >
+            <img src={image} alt={name} width={200} height={200} />
+            <h4 className={styles.eventName} >{name}</h4>
+            <p className={styles.eventInfo} >{info}</p>
+            <button value={'Boton'} className={styles.seeMoreBtn} onClick={handleSeeMoreClick}  >Boton</button>
         </div>
     )
 };
