@@ -8,10 +8,11 @@ const useEventsData = () => {
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState()
 
-
+    // console.log(import.meta.env.VITE_TICKTMASTER_API_KEY);
+    
        const fetchEvents = async (params) =>{
         try {
-            const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=JKKSubod9qAA1BGJXZVGJqU0wZtdRdpt&countryCode=MX${params?.length ? params : ''}`);
+            const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${import.meta.env.VITE_TICKTMASTER_API_KEY}&countryCode=US${params?.length ? params : ''}`);
 
             
             const data = await response.json();            

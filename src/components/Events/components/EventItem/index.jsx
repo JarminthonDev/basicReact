@@ -10,13 +10,15 @@ const EventItem = ({id,info,name,image, onEventClick})=>{
     }    
     return(
         
-
-        <div className={styles.eventInfoContainer} >
+        <div className={styles.eventItemContainer}>
             <img src={image} alt={name} width={200} height={200} />
+            <div className={styles.eventInfoContainer} >
             <h4 className={styles.eventName} >{name}</h4>
             <p className={styles.eventInfo} >{info}</p>
             <button value={'Boton'} className={styles.seeMoreBtn} onClick={handleSeeMoreClick}  >Boton</button>
         </div>
+        </div>
+        
     )
 };
 
