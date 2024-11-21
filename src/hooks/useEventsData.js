@@ -1,6 +1,8 @@
 import {  useState } from "react";
     // import eventsJSON from "../data/events.json"
 
+    //Hook para hacer una llamada a la Api de manera local
+
 const useEventsData = () => {
 
 
